@@ -1,7 +1,5 @@
 package com.xurxodev.moviesandroidkata.view.fragment;
 
-import static com.xurxodev.moviesandroidkata.R.raw.movies;
-
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,14 +13,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.xurxodev.moviesandroidkata.R;
 import com.xurxodev.moviesandroidkata.data.DiskMovieRepository;
+import com.xurxodev.moviesandroidkata.di.MoviesApplication;
 import com.xurxodev.moviesandroidkata.model.Movie;
 import com.xurxodev.moviesandroidkata.view.adapter.MoviesAdapter;
-
 import java.util.List;
+import javax.inject.Inject;
 
 public class MoviesFragment extends Fragment {
-
-    private DiskMovieRepository movieRepository;
+    @Inject
+    DiskMovieRepository movieRepository;
     private MoviesAdapter adapter;
     private RecyclerView recyclerView;
     private View rootView;
@@ -33,6 +32,10 @@ public class MoviesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
+        ((MoviesApplication) getContext().getApplicationContext())
+                .getMovieComponent()
+                .inject(this);
+
         rootView = inflater.inflate(R.layout.fragment_movies, container, false);
 
         initializeTitle();
@@ -77,8 +80,6 @@ public class MoviesFragment extends Fragment {
         AsyncTask<Void,Void,List<Movie>> moviesAsyncTask = new AsyncTask<Void, Void, List<Movie>>() {
             @Override
             protected List<Movie> doInBackground(Void... params) {
-                movieRepository = new DiskMovieRepository(getActivity().getApplication());
-
                 return movieRepository.getMovies();
             }
 
