@@ -18,7 +18,9 @@ import com.xurxodev.moviesandroidkata.model.Movie;
 import com.xurxodev.moviesandroidkata.view.adapter.MoviesAdapter;
 import java.util.List;
 import javax.inject.Inject;
+import dagger.hilt.android.AndroidEntryPoint;
 
+@AndroidEntryPoint
 public class MoviesFragment extends Fragment {
     @Inject
     DiskMovieRepository movieRepository;
@@ -32,10 +34,6 @@ public class MoviesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        ((MoviesApplication) getContext().getApplicationContext())
-                .getMovieComponent()
-                .inject(this);
-
         rootView = inflater.inflate(R.layout.fragment_movies, container, false);
 
         initializeTitle();

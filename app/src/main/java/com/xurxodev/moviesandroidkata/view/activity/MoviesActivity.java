@@ -8,6 +8,9 @@ import androidx.appcompat.widget.Toolbar;
 import com.xurxodev.moviesandroidkata.R;
 import com.xurxodev.moviesandroidkata.view.fragment.MoviesFragment;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
 public class MoviesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
