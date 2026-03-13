@@ -13,9 +13,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.inject.Inject;
+
 public class DiskMovieRepository {
     private Context applicationContext;
 
+    @Inject
     public DiskMovieRepository(Application applicationContext){
         this.applicationContext = applicationContext;
     }

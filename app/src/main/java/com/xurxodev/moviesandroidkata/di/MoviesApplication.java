@@ -10,7 +10,6 @@ public class MoviesApplication extends Application {
         super.onCreate();
         movieComponent = DaggerMovieComponent.builder()
                 .appModule(new AppModule(this))
-                .repositoryModule(new RepositoryModule())
                 .build();
     }
 

@@ -1,20 +1,22 @@
 package com.xurxodev.moviesandroidkata.di;
 
+import android.app.Application;
+
 import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 
 @Module
 public class AppModule {
-    MoviesApplication application;
+    Application application;
 
-    public AppModule(MoviesApplication application) {
+    public AppModule(Application application) {
         this.application = application;
     }
 
     @Provides
     @Singleton
-    MoviesApplication provideApplication() {
+    Application provideApplication() {
         return application;
     }
 }

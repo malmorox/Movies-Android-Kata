@@ -5,7 +5,7 @@ import javax.inject.Singleton;
 import dagger.Component;
 
 @Singleton
-@Component(modules = {AppModule.class, RepositoryModule.class})
+@Component(modules = AppModule.class)
 public interface MovieComponent {
     void inject(MoviesFragment moviesFragment);
 }
