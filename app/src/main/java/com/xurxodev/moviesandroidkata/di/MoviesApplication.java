@@ -8,7 +8,10 @@ public class MoviesApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        movieComponent = DaggerMovieComponent.builder().movieModule(new MovieModule(this)).build();
+        movieComponent = DaggerMovieComponent.builder()
+                .appModule(new AppModule(this))
+                .repositoryModule(new RepositoryModule())
+                .build();
     }
 
     public MovieComponent getMovieComponent() {
