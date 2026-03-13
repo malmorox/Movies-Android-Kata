@@ -12,7 +12,7 @@ import dagger.hilt.components.SingletonComponent;
 
 @Module
 @InstallIn(SingletonComponent.class)
-public class MovieModule {
+public class RepositoryModule {
     @Provides
     @Singleton
     public DiskMovieRepository provideDiskMovieRepository(Application application){
