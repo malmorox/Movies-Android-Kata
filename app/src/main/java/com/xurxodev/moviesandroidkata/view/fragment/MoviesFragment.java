@@ -22,7 +22,8 @@ import javax.inject.Inject;
 public class MoviesFragment extends Fragment {
     @Inject
     DiskMovieRepository movieRepository;
-    private MoviesAdapter adapter;
+    @Inject
+    MoviesAdapter adapter;
     private RecyclerView recyclerView;
     private View rootView;
     private TextView moviesCountTextView;
@@ -40,7 +41,6 @@ public class MoviesFragment extends Fragment {
 
         initializeTitle();
         initializeRefreshButton();
-        initializeAdapter();
         initializeRecyclerView();
 
         loadMovies();
@@ -63,10 +63,6 @@ public class MoviesFragment extends Fragment {
                 loadMovies();
             }
         });
-    }
-
-    private void initializeAdapter() {
-        adapter = new MoviesAdapter();
     }
 
     private void initializeRecyclerView() {

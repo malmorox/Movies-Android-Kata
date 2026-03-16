@@ -10,13 +10,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 import com.xurxodev.moviesandroidkata.R;
+import com.xurxodev.moviesandroidkata.loaders.ImageLoader;
 import com.xurxodev.moviesandroidkata.model.Movie;
+import com.xurxodev.moviesandroidkata.view.viewholder.MovieViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder> {
+import javax.inject.Inject;
+
+public class MoviesAdapter extends RecyclerView.Adapter<MovieViewHolder> {
     public List<Movie> movies = new ArrayList<>();
+    private ImageLoader imageLoader;
+
+    @Inject
+    public MoviesAdapter(ImageLoader imageLoader) {
+        this.imageLoader = imageLoader;
+    }
+
 
     public void setMovies(List<Movie> movies) {
         this.movies = movies;
@@ -29,20 +40,18 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MovieViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_movies, parent, false);
 
-        return new ViewHolder(view);
+        return new MovieViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, final int position) {
+    public void onBindViewHolder(final MovieViewHolder holder, final int position) {
         holder.movieItem = movies.get(position);
 
-        Picasso.get()
-                .load(holder.movieItem.getImage())
-                .into(holder.movieImageView);
+        imageLoader.loadImage(holder.movieItem.getImage(), holder.movieImageView);
 
         holder.titleTextView.setText(holder.movieItem .getTitle());
     }
@@ -50,19 +59,5 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
     @Override
     public int getItemCount() {
         return movies.size();
-    }
-
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        public final ImageView movieImageView;
-        public final TextView titleTextView;
-
-        public Movie movieItem;
-
-        public ViewHolder(View view) {
-            super(view);
-
-            movieImageView = (ImageView) view.findViewById(R.id.item_movie_poster);
-            titleTextView = (TextView) view.findViewById(R.id.item_movie_title);
-        }
     }
 }
