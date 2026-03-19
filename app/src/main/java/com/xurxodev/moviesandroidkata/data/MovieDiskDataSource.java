@@ -1,15 +1,12 @@
 package com.xurxodev.moviesandroidkata.data;
 
 import android.content.Context;
-
 import com.xurxodev.moviesandroidkata.R;
-
 import java.io.IOException;
 import java.io.InputStream;
-
 import javax.inject.Inject;
 
-public class MovieDiskDataSource {
+public class MovieDiskDataSource implements MovieDataSource {
     private Context applicationContext;
 
     @Inject
@@ -17,7 +14,7 @@ public class MovieDiskDataSource {
         this.applicationContext = applicationContext;
     }
 
-    public String getMoviesJson() {
+    public String getRawMovies() {
         try {
             InputStream inputStream = applicationContext.getResources().openRawResource(R.raw.movies);
             byte[] b = new byte[inputStream.available()];

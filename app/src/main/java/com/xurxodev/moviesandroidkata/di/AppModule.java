@@ -1,6 +1,7 @@
 package com.xurxodev.moviesandroidkata.di;
 
 import android.app.Application;
+import android.content.Context;
 
 import javax.inject.Singleton;
 import dagger.Module;
@@ -20,4 +21,9 @@ public class AppModule {
         return application;
     }
 
+    @Provides
+    @Singleton
+    Context provideContext() {
+        return application.getApplicationContext();
+    }
 }

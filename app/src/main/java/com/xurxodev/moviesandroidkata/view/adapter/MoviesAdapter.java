@@ -3,20 +3,13 @@ package com.xurxodev.moviesandroidkata.view.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.squareup.picasso.Picasso;
 import com.xurxodev.moviesandroidkata.R;
 import com.xurxodev.moviesandroidkata.loaders.ImageLoader;
 import com.xurxodev.moviesandroidkata.model.Movie;
-import com.xurxodev.moviesandroidkata.view.viewholder.MovieViewHolder;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.inject.Inject;
 
 public class MoviesAdapter extends RecyclerView.Adapter<MovieViewHolder> {
@@ -28,7 +21,6 @@ public class MoviesAdapter extends RecyclerView.Adapter<MovieViewHolder> {
         this.imageLoader = imageLoader;
     }
 
-
     public void setMovies(List<Movie> movies) {
         this.movies = movies;
         notifyDataSetChanged();
@@ -39,6 +31,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MovieViewHolder> {
         notifyDataSetChanged();
     }
 
+    @NonNull
     @Override
     public MovieViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
