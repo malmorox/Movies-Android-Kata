@@ -15,8 +15,7 @@ public class MovieJsonParser implements MovieParser {
     }
 
     public List<Movie> parse(String jsonString) {
-        Movie[] movies = gson.fromJson(jsonString, Movie[].class);
-        return Arrays.asList(movies);
+        return Arrays.asList(gson.fromJson(jsonString, Movie[].class));
     }
 
 

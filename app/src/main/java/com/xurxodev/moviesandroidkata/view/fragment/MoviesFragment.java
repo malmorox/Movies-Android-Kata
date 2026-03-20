@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import com.xurxodev.moviesandroidkata.R;
 import com.xurxodev.moviesandroidkata.data.MovieRepository;
@@ -54,8 +56,12 @@ public class MoviesFragment extends Fragment {
 
     private void loadMovies() {
         loadingMovies();
+        getMoviesAsyncTask().execute();
+    }
 
-        AsyncTask<Void,Void,List<Movie>> moviesAsyncTask = new AsyncTask<Void, Void, List<Movie>>() {
+    @NonNull
+    private AsyncTask<Void, Void, List<Movie>> getMoviesAsyncTask() {
+        return new AsyncTask<Void, Void, List<Movie>>() {
             @Override
             protected List<Movie> doInBackground(Void... params) {
                 return movieRepository.getMovies();
@@ -66,8 +72,6 @@ public class MoviesFragment extends Fragment {
                 loadedMovies(movies);
             }
         };
-
-        moviesAsyncTask.execute();
     }
 
     private void loadingMovies(){

@@ -20,10 +20,4 @@ public class AppModule {
     Application provideApplication() {
         return application;
     }
-
-    @Provides
-    @Singleton
-    Context provideContext() {
-        return application.getApplicationContext();
-    }
 }

@@ -1,5 +1,6 @@
 package com.xurxodev.moviesandroidkata.data;
 
+import android.app.Application;
 import android.content.Context;
 import com.xurxodev.moviesandroidkata.R;
 import java.io.IOException;
@@ -10,7 +11,7 @@ public class MovieDiskDataSource implements MovieDataSource {
     private Context applicationContext;
 
     @Inject
-    public MovieDiskDataSource(Context applicationContext){
+    public MovieDiskDataSource(Application applicationContext){
         this.applicationContext = applicationContext;
     }
 

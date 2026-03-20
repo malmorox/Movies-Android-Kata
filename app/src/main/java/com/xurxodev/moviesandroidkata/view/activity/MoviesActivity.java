@@ -30,7 +30,7 @@ public class MoviesActivity extends AppCompatActivity {
     }
 
     private void initializeToolBar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }
 }
