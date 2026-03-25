@@ -15,19 +15,19 @@ import dagger.Provides;
 public class RepositoryModule {
     @Provides
     @Singleton
-    MovieRepository providesRepository(MovieDiskRepository repository) {
+    MovieRepository provideRepository(MovieDiskRepository repository) {
         return repository;
     }
 
     @Provides
     @Singleton
-    MovieDataSource providesDataSource(MovieDiskDataSource dataSource) {
+    MovieDataSource provideDataSource(MovieDiskDataSource dataSource) {
         return dataSource;
     }
 
     @Provides
     @Singleton
-    MovieParser providesParser(MovieJsonParser parser) {
+    MovieParser provideParser(MovieJsonParser parser) {
         return parser;
     }
 

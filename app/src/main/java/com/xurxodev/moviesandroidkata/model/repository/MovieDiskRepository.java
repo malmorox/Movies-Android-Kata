@@ -18,6 +18,11 @@ public class MovieDiskRepository implements MovieRepository {
 
     public List<Movie> getMovies() {
         // TODO: Simular delay sin un utils
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         String moviesData = dataSource.getRawMovies();
         return parser.parse(moviesData);
     }

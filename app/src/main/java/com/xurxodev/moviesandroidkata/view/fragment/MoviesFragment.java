@@ -26,7 +26,7 @@ public class MoviesFragment extends Fragment implements MoviesContract.View {
         super.onCreate(savedInstanceState);
 
         ((MoviesApplication) getContext().getApplicationContext())
-                .getMovieComponent()
+                .getMovieComponent(this)
                 .inject(this);
     }
 
