@@ -1,4 +1,4 @@
-package com.xurxodev.moviesandroidkata.model.data;
+package com.xurxodev.moviesandroidkata.model.datasource;
 
 public interface MovieDataSource {
     String getRawMovies();

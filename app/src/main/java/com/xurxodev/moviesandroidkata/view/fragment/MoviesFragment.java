@@ -1,15 +1,12 @@
 package com.xurxodev.moviesandroidkata.view.fragment;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import com.xurxodev.moviesandroidkata.MoviesContract;
 import com.xurxodev.moviesandroidkata.R;
-import com.xurxodev.moviesandroidkata.model.data.MovieRepository;
 import com.xurxodev.moviesandroidkata.databinding.FragmentMoviesBinding;
 import com.xurxodev.moviesandroidkata.di.MoviesApplication;
 import com.xurxodev.moviesandroidkata.model.entity.Movie;
@@ -17,26 +14,31 @@ import com.xurxodev.moviesandroidkata.view.adapter.MoviesAdapter;
 import java.util.List;
 import javax.inject.Inject;
 
-public class MoviesFragment extends Fragment {
+public class MoviesFragment extends Fragment implements MoviesContract.View {
     @Inject
-    MovieRepository movieRepository;
+    MoviesContract.Presenter presenter;
     @Inject
     MoviesAdapter adapter;
     private FragmentMoviesBinding binding;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
         ((MoviesApplication) getContext().getApplicationContext())
                 .getMovieComponent()
                 .inject(this);
+    }
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
         binding = FragmentMoviesBinding.inflate(inflater, container, false);
 
         initializeRefreshButton();
         initializeRecyclerView();
 
-        loadMovies();
+        presenter.loadMovies();
 
         return binding.getRoot();
     }
@@ -45,7 +47,7 @@ public class MoviesFragment extends Fragment {
         binding.refreshButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadMovies();
+                presenter.loadMovies();
             }
         });
     }
@@ -54,38 +56,19 @@ public class MoviesFragment extends Fragment {
         binding.recyclerviewMovies.setAdapter(adapter);
     }
 
-    private void loadMovies() {
-        loadingMovies();
-        getMoviesAsyncTask().execute();
+    @Override
+    public void showMovies(List<Movie> movies) {
+        adapter.setMovies(movies);
     }
 
-    @NonNull
-    private AsyncTask<Void, Void, List<Movie>> getMoviesAsyncTask() {
-        return new AsyncTask<Void, Void, List<Movie>>() {
-            @Override
-            protected List<Movie> doInBackground(Void... params) {
-                return movieRepository.getMovies();
-            }
-
-            @Override
-            protected void onPostExecute(List<Movie> movies) {
-                loadedMovies(movies);
-            }
-        };
-    }
-
-    private void loadingMovies(){
+    @Override
+    public void showLoading() {
         adapter.clearMovies();
         binding.moviesTitleTextView.setText(R.string.loading_movies_text);
     }
 
-    private void loadedMovies(List<Movie> movies){
-        adapter.setMovies(movies);
-        refreshTitleWithMoviesCount(movies);
-    }
-
-    private void refreshTitleWithMoviesCount(List<Movie> movies) {
-        String countText = getString(R.string.movies_count_text);
-        binding.moviesTitleTextView.setText(String.format(countText, movies.size()));
+    @Override
+    public void showTitleWithMoviesCount(int moviesCount) {
+        binding.moviesTitleTextView.setText(String.format(getString(R.string.movies_count_text), moviesCount));
     }
 }

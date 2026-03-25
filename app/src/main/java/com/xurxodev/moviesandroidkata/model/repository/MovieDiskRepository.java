@@ -1,6 +1,7 @@
-package com.xurxodev.moviesandroidkata.model.data;
+package com.xurxodev.moviesandroidkata.model.repository;
 
-import static com.xurxodev.moviesandroidkata.utils.DelayUtils.simulateDelay;
+import com.xurxodev.moviesandroidkata.model.datasource.MovieDataSource;
+import com.xurxodev.moviesandroidkata.model.parser.MovieParser;
 import com.xurxodev.moviesandroidkata.model.entity.Movie;
 import java.util.List;
 import javax.inject.Inject;
@@ -16,7 +17,7 @@ public class MovieDiskRepository implements MovieRepository {
     }
 
     public List<Movie> getMovies() {
-        simulateDelay(2000);
+        // TODO: Simular delay sin un utils
         String moviesData = dataSource.getRawMovies();
         return parser.parse(moviesData);
     }

@@ -1,4 +1,4 @@
-package com.xurxodev.moviesandroidkata.model.data;
+package com.xurxodev.moviesandroidkata.model.datasource;
 
 import android.app.Application;
 import android.content.Context;

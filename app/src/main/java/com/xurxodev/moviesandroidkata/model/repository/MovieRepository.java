@@ -1,4 +1,4 @@
-package com.xurxodev.moviesandroidkata.model.data;
+package com.xurxodev.moviesandroidkata.model.repository;
 
 import com.xurxodev.moviesandroidkata.model.entity.Movie;
 import java.util.List;

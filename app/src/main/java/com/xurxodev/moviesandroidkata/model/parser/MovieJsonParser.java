@@ -1,4 +1,4 @@
-package com.xurxodev.moviesandroidkata.model.data;
+package com.xurxodev.moviesandroidkata.model.parser;
 
 import com.google.gson.Gson;
 import com.xurxodev.moviesandroidkata.model.entity.Movie;
