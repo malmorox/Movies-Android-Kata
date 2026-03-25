@@ -1,14 +1,12 @@
-# Movies-Android-Kata Part 1
-
+# Movies-Android-Kata Part2
 Movies Android kata for practice Best Practices in Android implemented by Jorge Sánchez (Xurxodev)
 
-Kata 1
+Kata 2
 
-- We are here to practice Dependency Injection.
-- We are going to use [Dagger2](https://google.github.io/dagger/) as Dependency Injector.
+- We are here to practice Model View Presenter.
 - We are going to practice pair programming.
 
-## Considerations 
+## Considerations
 
 Master branch contains already solved katas, exists a branch for every kata.
 
@@ -18,29 +16,34 @@ This repository contains an Android application to show movies information:
 
 ![](/art/movies.gif)
 
-The application initial state without dependency injection is ready to just start refactoring. 
+Initial state in this branch is without presenter is ready for refactoring to mvp.
 
 ## Tasks
 
-Your task as Android Developer is to **refactoring to inject dependencies**, only singleton dependencies.
+Your task as Android Developer is to **refactoring presentation layer to Model View Presenter**.
 The recommendation for this exercise is:
 
-  * Before starting
-    1. Fork this repository and Checkout `kata-di-movies` branch or download zip.
+* Before starting
+    1. Fork this repository and Checkout `kata-mvp-movies` branch or download zip.
     3. Execute the application, explore it manually and make yourself familiar with the code.
 
-  * To help you get started:     
-    1. Configure dagger 
-    2. Identify singleton dependencies.
-    3. Create module/s, component/s, custom application, set targets where inject dependencies
-    4. Execute the app and verify that all is right
-    
+* To help you get started:
+    1. Identify presentation and view logic
+    2. Create presenter for current view and its view abstraction.
+    3. Refactoring activity or fragment for implement view abstraction
+    4. Play with delay presenter response and verify not exists memory leak to rotate in loading process
+    5. Execute the app and verify that all is right
+
+* Estra task if you feel with force :)
+    1. Create movies detail screen according to mvp pattern
+    2. Create navigator for navigate from movies to movie
+
+
 ## Documentation
 
 There are some links which can be useful to finish these tasks:
 
-* [Official docs Dagger 2](https://google.github.io/dagger/)
-* [Dependency Injection with Dagger 2](https://guides.codepath.com/android/Dependency-Injection-with-Dagger-2)
+* [Model-View-Presenter Architecture in Android Applications](http://macoscope.com/blog/model-view-presenter-architecture-in-android-applications/)
 
 ##Developed By
 
@@ -49,7 +52,7 @@ There are some links which can be useful to finish these tasks:
 ##License
 
 
-    Copyright 2016 Jorge Sánchez Fernández
+    Copyright 2017 Jorge Sánchez Fernández
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

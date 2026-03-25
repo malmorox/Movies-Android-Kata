@@ -1,12 +1,12 @@
 package com.xurxodev.moviesandroidkata.di;
 
 import com.google.gson.Gson;
-import com.xurxodev.moviesandroidkata.data.MovieDataSource;
-import com.xurxodev.moviesandroidkata.data.MovieDiskDataSource;
-import com.xurxodev.moviesandroidkata.data.MovieDiskRepository;
-import com.xurxodev.moviesandroidkata.data.MovieJsonParser;
-import com.xurxodev.moviesandroidkata.data.MovieParser;
-import com.xurxodev.moviesandroidkata.data.MovieRepository;
+import com.xurxodev.moviesandroidkata.model.data.MovieDataSource;
+import com.xurxodev.moviesandroidkata.model.data.MovieDiskDataSource;
+import com.xurxodev.moviesandroidkata.model.data.MovieDiskRepository;
+import com.xurxodev.moviesandroidkata.model.data.MovieJsonParser;
+import com.xurxodev.moviesandroidkata.model.data.MovieParser;
+import com.xurxodev.moviesandroidkata.model.data.MovieRepository;
 import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;

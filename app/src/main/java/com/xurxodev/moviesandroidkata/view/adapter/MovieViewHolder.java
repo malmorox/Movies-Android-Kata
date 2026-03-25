@@ -5,7 +5,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.xurxodev.moviesandroidkata.R;
-import com.xurxodev.moviesandroidkata.model.Movie;
+import com.xurxodev.moviesandroidkata.model.entity.Movie;
 
 public class MovieViewHolder extends RecyclerView.ViewHolder {
     public final ImageView movieImageView;

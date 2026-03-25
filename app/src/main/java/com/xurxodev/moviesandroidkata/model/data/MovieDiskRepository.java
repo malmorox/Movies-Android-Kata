@@ -1,7 +1,7 @@
-package com.xurxodev.moviesandroidkata.data;
+package com.xurxodev.moviesandroidkata.model.data;
 
 import static com.xurxodev.moviesandroidkata.utils.DelayUtils.simulateDelay;
-import com.xurxodev.moviesandroidkata.model.Movie;
+import com.xurxodev.moviesandroidkata.model.entity.Movie;
 import java.util.List;
 import javax.inject.Inject;
 
