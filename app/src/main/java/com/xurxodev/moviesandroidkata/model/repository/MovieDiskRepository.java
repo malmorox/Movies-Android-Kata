@@ -26,4 +26,15 @@ public class MovieDiskRepository implements MovieRepository {
         String moviesData = dataSource.getRawMovies();
         return parser.parse(moviesData);
     }
+
+    public Movie getMovie(String title) {
+        List<Movie> movies = getMovies();
+
+        for (Movie movie : movies) {
+            if (movie.getTitle().equals(title)) {
+                return movie;
+            }
+        }
+        return null;
+    }
 }
