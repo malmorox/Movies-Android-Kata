@@ -1,9 +1,9 @@
-# Movies-Android-Kata Part2
+# Movies-Android-Kata Part3
 Movies Android kata for practice Best Practices in Android implemented by Jorge Sánchez (Xurxodev)
 
-Kata 2
+Kata 3
 
-- We are here to practice Model View Presenter.
+- We are here to practice Clean architecture with domain and data layers.
 - We are going to practice pair programming.
 
 ## Considerations
@@ -16,34 +16,28 @@ This repository contains an Android application to show movies information:
 
 ![](/art/movies.gif)
 
-Initial state in this branch is without presenter is ready for refactoring to mvp.
+Initial state in this branch is without domain layer and is ready for refactoring.
 
 ## Tasks
 
 Your task as Android Developer is to **refactoring presentation layer to Model View Presenter**.
 The recommendation for this exercise is:
 
-* Before starting
-    1. Fork this repository and Checkout `kata-mvp-movies` branch or download zip.
+  * Before starting
+    1. Fork this repository and Checkout `kata_domain_data-movies` branch or download zip.
     3. Execute the application, explore it manually and make yourself familiar with the code.
 
-* To help you get started:
-    1. Identify presentation and view logic
-    2. Create presenter for current view and its view abstraction.
-    3. Refactoring activity or fragment for implement view abstraction
-    4. Play with delay presenter response and verify not exists memory leak to rotate in loading process
+  * To help you get started:
+    1. Identify domain (application logic and business logic)
+    2. Identify domain boundaries
+    3. Create usecases or interactors and entities.
+    4. Refactoring activity or fragment, presenters.
     5. Execute the app and verify that all is right
 
-* Estra task if you feel with force :)
-    1. Create movies detail screen according to mvp pattern
-    2. Create navigator for navigate from movies to movie
-
-
-## Documentation
-
-There are some links which can be useful to finish these tasks:
-
-* [Model-View-Presenter Architecture in Android Applications](http://macoscope.com/blog/model-view-presenter-architecture-in-android-applications/)
+  * Estra task if you feel with force :)
+    1. Abstracts the domain of the technology used to execute asynchronously and to execute in the main thread
+    2. Create movies detail screen according to clean architecture
+    3. Create navigator for navigate from movies to movie
 
 ##Developed By
 
