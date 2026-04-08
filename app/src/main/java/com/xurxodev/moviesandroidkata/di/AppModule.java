@@ -1,6 +1,7 @@
 package com.xurxodev.moviesandroidkata.di;
 
 import android.app.Application;
+import com.xurxodev.moviesandroidkata.Navigator;
 import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
@@ -17,5 +18,11 @@ public class AppModule {
     @Singleton
     Application provideApplication() {
         return application;
+    }
+
+    @Provides
+    @Singleton
+    Navigator provideNavigator() {
+        return new Navigator(application);
     }
 }

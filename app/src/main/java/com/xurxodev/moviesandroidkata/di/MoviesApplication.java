@@ -1,6 +1,7 @@
 package com.xurxodev.moviesandroidkata.di;
 
 import android.app.Application;
+import com.xurxodev.moviesandroidkata.MovieDetailContract;
 import com.xurxodev.moviesandroidkata.MoviesContract;
 
 public class MoviesApplication extends Application {
@@ -11,5 +12,15 @@ public class MoviesApplication extends Application {
                 .imageModule(new ImageModule())
                 .presenterModule(new PresenterModule(view))
                 .build();
+    }
+
+    public MovieComponent getMovieComponent(MovieDetailContract.View view) {
+        return DaggerMovieComponent.builder()
+                .appModule(new AppModule(this))
+                .repositoryModule(new RepositoryModule())
+                .imageModule(new ImageModule())
+                .presenterModule(new PresenterModule(view))
+                .build();
+
     }
 }

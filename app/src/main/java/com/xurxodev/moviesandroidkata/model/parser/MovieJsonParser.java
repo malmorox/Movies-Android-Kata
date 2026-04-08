@@ -14,6 +14,7 @@ public class MovieJsonParser implements MovieParser {
         this.gson = gson;
     }
 
+    @Override
     public List<Movie> parse(String jsonString) {
         return Arrays.asList(gson.fromJson(jsonString, Movie[].class));
     }

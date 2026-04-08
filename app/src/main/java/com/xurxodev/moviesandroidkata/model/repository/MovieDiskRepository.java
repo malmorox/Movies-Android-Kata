@@ -16,6 +16,7 @@ public class MovieDiskRepository implements MovieRepository {
         this.parser = parser;
     }
 
+    @Override
     public List<Movie> getMovies() {
         // TODO: Simular delay sin un utils
         try {
@@ -27,9 +28,9 @@ public class MovieDiskRepository implements MovieRepository {
         return parser.parse(moviesData);
     }
 
+    @Override
     public Movie getMovie(String title) {
         List<Movie> movies = getMovies();
-
         for (Movie movie : movies) {
             if (movie.getTitle().equals(title)) {
                 return movie;

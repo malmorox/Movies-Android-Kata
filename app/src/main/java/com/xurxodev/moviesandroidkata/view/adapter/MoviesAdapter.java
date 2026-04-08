@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import com.xurxodev.moviesandroidkata.MoviesContract;
 import com.xurxodev.moviesandroidkata.R;
 import com.xurxodev.moviesandroidkata.loaders.ImageLoader;
 import com.xurxodev.moviesandroidkata.model.entity.Movie;
@@ -15,10 +16,12 @@ import javax.inject.Inject;
 public class MoviesAdapter extends RecyclerView.Adapter<MovieViewHolder> {
     public List<Movie> movies = new ArrayList<>();
     private ImageLoader imageLoader;
+    private MoviesContract.Presenter presenter;
 
     @Inject
-    public MoviesAdapter(ImageLoader imageLoader) {
+    public MoviesAdapter(ImageLoader imageLoader, MoviesContract.Presenter presenter) {
         this.imageLoader = imageLoader;
+        this.presenter = presenter;
     }
 
     public void setMovies(List<Movie> movies) {
@@ -47,6 +50,13 @@ public class MoviesAdapter extends RecyclerView.Adapter<MovieViewHolder> {
         imageLoader.loadImage(holder.movieItem.getImage(), holder.movieImageView);
 
         holder.titleTextView.setText(holder.movieItem .getTitle());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.onMovieClicked(holder.movieItem);
+            }
+        });
     }
 
     @Override

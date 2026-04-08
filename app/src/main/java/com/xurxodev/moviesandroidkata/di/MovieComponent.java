@@ -1,5 +1,6 @@
 package com.xurxodev.moviesandroidkata.di;
 
+import com.xurxodev.moviesandroidkata.view.activity.MovieDetailActivity;
 import com.xurxodev.moviesandroidkata.view.fragment.MoviesFragment;
 import javax.inject.Singleton;
 import dagger.Component;
@@ -8,4 +9,5 @@ import dagger.Component;
 @Component(modules = {AppModule.class, RepositoryModule.class, ImageModule.class, PresenterModule.class})
 public interface MovieComponent {
     void inject(MoviesFragment moviesFragment);
+    void inject(MovieDetailActivity movieDetailActivity);
 }
