@@ -1,7 +1,7 @@
-package com.xurxodev.moviesandroidkata.di;
+package com.xurxodev.moviesandroidkata.view.di;
 
-import com.xurxodev.moviesandroidkata.loaders.ImageLoader;
-import com.xurxodev.moviesandroidkata.loaders.PicassoImageLoader;
+import com.xurxodev.moviesandroidkata.view.loaders.ImageLoader;
+import com.xurxodev.moviesandroidkata.view.loaders.PicassoImageLoader;
 import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;

@@ -15,6 +15,7 @@ public class Navigator {
 
     public void navigateToMovieDetail(Movie movie) {
         Intent intent = new Intent(context, MovieDetailActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
         intent.putExtra("movie_title", movie.getTitle());
         context.startActivity(intent);

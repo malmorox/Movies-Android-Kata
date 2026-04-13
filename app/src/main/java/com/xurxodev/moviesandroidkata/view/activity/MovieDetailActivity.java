@@ -6,8 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.xurxodev.moviesandroidkata.MovieDetailContract;
 import com.xurxodev.moviesandroidkata.R;
 import com.xurxodev.moviesandroidkata.databinding.ActivityMovieDetailBinding;
-import com.xurxodev.moviesandroidkata.di.MoviesApplication;
-import com.xurxodev.moviesandroidkata.loaders.ImageLoader;
+import com.xurxodev.moviesandroidkata.view.di.MoviesApplication;
+import com.xurxodev.moviesandroidkata.view.loaders.ImageLoader;
 import com.xurxodev.moviesandroidkata.model.entity.Movie;
 import javax.inject.Inject;
 

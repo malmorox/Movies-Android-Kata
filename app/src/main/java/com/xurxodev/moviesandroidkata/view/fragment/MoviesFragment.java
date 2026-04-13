@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment;
 import com.xurxodev.moviesandroidkata.MoviesContract;
 import com.xurxodev.moviesandroidkata.R;
 import com.xurxodev.moviesandroidkata.databinding.FragmentMoviesBinding;
-import com.xurxodev.moviesandroidkata.di.MoviesApplication;
+import com.xurxodev.moviesandroidkata.view.di.MoviesApplication;
 import com.xurxodev.moviesandroidkata.model.entity.Movie;
 import com.xurxodev.moviesandroidkata.view.adapter.MoviesAdapter;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.xurxodev.moviesandroidkata.di;
+package com.xurxodev.moviesandroidkata.view.di;
 
 import com.google.gson.Gson;
 import com.xurxodev.moviesandroidkata.model.datasource.MovieDataSource;

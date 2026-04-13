@@ -1,4 +1,4 @@
-package com.xurxodev.moviesandroidkata.di;
+package com.xurxodev.moviesandroidkata.view.di;
 
 import android.app.Application;
 import com.xurxodev.moviesandroidkata.Navigator;
