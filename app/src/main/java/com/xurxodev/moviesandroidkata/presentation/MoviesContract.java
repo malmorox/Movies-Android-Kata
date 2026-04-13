@@ -11,6 +11,7 @@ public interface MoviesContract {
     }
 
     interface Presenter {
+        void setView(View view);
         void loadMovies();
         void onMovieClicked(Movie movie);
     }

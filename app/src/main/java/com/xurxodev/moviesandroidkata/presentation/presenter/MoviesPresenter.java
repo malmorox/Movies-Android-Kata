@@ -12,18 +12,21 @@ public class MoviesPresenter implements MoviesContract.Presenter {
     private Navigator navigator;
     private GetMoviesUseCase getMoviesUseCase;
 
-
     @Inject
-    public MoviesPresenter(MoviesContract.View view, GetMoviesUseCase getMoviesUseCase, Navigator navigator) {
-        this.view = view;
+    public MoviesPresenter(GetMoviesUseCase getMoviesUseCase, Navigator navigator) {
         this.getMoviesUseCase = getMoviesUseCase;
         this.navigator = navigator;
     }
 
     @Override
+    public void setView(MoviesContract.View view) {
+        this.view = view;
+    }
+
+    @Override
     public void loadMovies() {
         view.showLoading();
-        List<Movie> movies = getMoviesUseCase.get();
+        List<Movie> movies = getMoviesUseCase.execute();
         view.showMovies(movies);
         view.showTitleWithMoviesCount(movies.size());
     }

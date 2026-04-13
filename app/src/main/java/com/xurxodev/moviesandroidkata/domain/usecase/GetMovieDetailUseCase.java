@@ -12,7 +12,7 @@ public class GetMovieDetailUseCase {
         this.movieRepository = movieRepository;
     }
 
-    public Movie get(String movieTitle) {
+    public Movie execute(String movieTitle) {
         return movieRepository.getMovie(movieTitle);
     }
 }

@@ -19,10 +19,4 @@ public class AppModule {
     Application provideApplication() {
         return application;
     }
-
-    @Provides
-    @Singleton
-    Navigator provideNavigator() {
-        return new Navigator(application);
-    }
 }

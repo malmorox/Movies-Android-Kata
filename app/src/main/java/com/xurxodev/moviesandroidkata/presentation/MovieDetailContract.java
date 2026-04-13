@@ -9,6 +9,7 @@ public interface MovieDetailContract {
     }
 
     interface Presenter {
+        void setView(View view);
         void loadMovie(String movieTitle);
     }
 }

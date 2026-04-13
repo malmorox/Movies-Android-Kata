@@ -21,14 +21,15 @@ public class MovieDetailActivity extends AppCompatActivity implements MovieDetai
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_movie_detail);
-
-        ((MoviesApplication) getApplication())
-                .getMovieComponent(this)
-                .inject(this);
 
         binding = ActivityMovieDetailBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        ((MoviesApplication) getApplication())
+                .getMovieComponent()
+                .inject(this);
+
+        presenter.setView(this);
 
         String movieTitle = getIntent().getStringExtra("movie_title");
         presenter.loadMovie(movieTitle);

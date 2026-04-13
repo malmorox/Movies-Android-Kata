@@ -26,7 +26,7 @@ public class MoviesFragment extends Fragment implements MoviesContract.View {
         super.onCreate(savedInstanceState);
 
         ((MoviesApplication) getContext().getApplicationContext())
-                .getMovieComponent(this)
+                .getMovieComponent()
                 .inject(this);
     }
 
@@ -38,6 +38,7 @@ public class MoviesFragment extends Fragment implements MoviesContract.View {
         initializeRefreshButton();
         initializeRecyclerView();
 
+        presenter.setView(this);
         presenter.loadMovies();
 
         return binding.getRoot();

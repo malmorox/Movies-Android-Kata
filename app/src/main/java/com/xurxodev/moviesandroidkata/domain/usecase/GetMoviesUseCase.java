@@ -13,7 +13,7 @@ public class GetMoviesUseCase {
         this.movieRepository = movieRepository;
     }
 
-    public List<Movie> get() {
+    public List<Movie> execute() {
         return movieRepository.getMovies();
     }
 }

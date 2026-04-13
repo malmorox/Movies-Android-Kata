@@ -9,14 +9,18 @@ public class MovieDetailPresenter implements MovieDetailContract.Presenter {
     private GetMovieDetailUseCase getMovieDetailUseCase;
 
     @Inject
-    public MovieDetailPresenter(MovieDetailContract.View view, GetMovieDetailUseCase getMovieDetailUseCase) {
-        this.view = view;
+    public MovieDetailPresenter(GetMovieDetailUseCase getMovieDetailUseCase) {
         this.getMovieDetailUseCase = getMovieDetailUseCase;
+    }
+
+    @Override
+    public void setView(MovieDetailContract.View view) {
+        this.view = view;
     }
 
     @Override
     public void loadMovie(String movieTitle) {
         view.showLoading();
-        view.showMovie(getMovieDetailUseCase.get(movieTitle));
+        view.showMovie(getMovieDetailUseCase.execute(movieTitle));
     }
 }
