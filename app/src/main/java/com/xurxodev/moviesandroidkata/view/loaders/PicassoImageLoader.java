@@ -1,7 +1,6 @@
 package com.xurxodev.moviesandroidkata.view.loaders;
 
 import android.widget.ImageView;
-
 import com.squareup.picasso.Picasso;
 
 public class PicassoImageLoader implements ImageLoader {

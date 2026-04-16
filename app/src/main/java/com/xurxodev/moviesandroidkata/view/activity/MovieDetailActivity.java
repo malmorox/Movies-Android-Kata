@@ -3,15 +3,16 @@ package com.xurxodev.moviesandroidkata.view.activity;
 import android.os.Bundle;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
-import com.xurxodev.moviesandroidkata.MovieDetailContract;
+
 import com.xurxodev.moviesandroidkata.R;
 import com.xurxodev.moviesandroidkata.databinding.ActivityMovieDetailBinding;
+import com.xurxodev.moviesandroidkata.view.MovieDetailView;
 import com.xurxodev.moviesandroidkata.view.di.MoviesApplication;
 import com.xurxodev.moviesandroidkata.view.loaders.ImageLoader;
 import com.xurxodev.moviesandroidkata.model.entity.Movie;
 import javax.inject.Inject;
 
-public class MovieDetailActivity extends AppCompatActivity implements MovieDetailContract.View {
+public class MovieDetailActivity extends AppCompatActivity implements MovieDetailView {
     @Inject
     MovieDetailContract.Presenter presenter;
     @Inject

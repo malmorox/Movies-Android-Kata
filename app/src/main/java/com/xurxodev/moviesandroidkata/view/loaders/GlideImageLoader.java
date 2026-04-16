@@ -1,7 +1,6 @@
 package com.xurxodev.moviesandroidkata.view.loaders;
 
 import android.widget.ImageView;
-
 import com.bumptech.glide.Glide;
 
 public class GlideImageLoader implements ImageLoader {

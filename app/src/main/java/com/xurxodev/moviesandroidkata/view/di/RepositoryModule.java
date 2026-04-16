@@ -8,32 +8,22 @@ import com.xurxodev.moviesandroidkata.model.parser.MovieJsonParser;
 import com.xurxodev.moviesandroidkata.model.parser.MovieParser;
 import com.xurxodev.moviesandroidkata.model.repository.MovieRepository;
 import javax.inject.Singleton;
+
+import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class RepositoryModule {
-    @Provides
+public abstract class RepositoryModule {
+    @Binds
     @Singleton
-    MovieRepository provideRepository(MovieDiskRepository repository) {
-        return repository;
-    }
+    abstract MovieRepository bindRepository(MovieDiskRepository repository);
 
-    @Provides
+    @Binds
     @Singleton
-    MovieDataSource provideDataSource(MovieDiskDataSource dataSource) {
-        return dataSource;
-    }
+    abstract MovieDataSource bindDataSource(MovieDiskDataSource dataSource);
 
-    @Provides
+    @Binds
     @Singleton
-    MovieParser provideParser(MovieJsonParser parser) {
-        return parser;
-    }
-
-    @Provides
-    @Singleton
-    Gson provideGson() {
-        return new Gson();
-    }
+    abstract MovieParser bindParser(MovieJsonParser parser);
 }

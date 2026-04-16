@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.xurxodev.moviesandroidkata.MoviesContract;
+
 import com.xurxodev.moviesandroidkata.R;
 import com.xurxodev.moviesandroidkata.view.loaders.ImageLoader;
 import com.xurxodev.moviesandroidkata.model.entity.Movie;

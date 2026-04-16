@@ -1,7 +1,7 @@
 package com.xurxodev.moviesandroidkata.view.di;
 
 import android.app.Application;
-import com.xurxodev.moviesandroidkata.Navigator;
+import com.xurxodev.moviesandroidkata.view.Navigator;
 import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;

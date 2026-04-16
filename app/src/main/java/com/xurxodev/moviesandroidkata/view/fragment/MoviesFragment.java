@@ -5,18 +5,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
-import com.xurxodev.moviesandroidkata.MoviesContract;
+
 import com.xurxodev.moviesandroidkata.R;
 import com.xurxodev.moviesandroidkata.databinding.FragmentMoviesBinding;
+import com.xurxodev.moviesandroidkata.presenter.MoviesPresenter;
 import com.xurxodev.moviesandroidkata.view.di.MoviesApplication;
 import com.xurxodev.moviesandroidkata.model.entity.Movie;
 import com.xurxodev.moviesandroidkata.view.adapter.MoviesAdapter;
 import java.util.List;
 import javax.inject.Inject;
 
-public class MoviesFragment extends Fragment implements MoviesContract.View {
-    @Inject
-    MoviesContract.Presenter presenter;
+public class MoviesFragment extends Fragment {
+    private MoviesPresenter presenter;
     @Inject
     MoviesAdapter adapter;
     private FragmentMoviesBinding binding;
@@ -26,8 +26,10 @@ public class MoviesFragment extends Fragment implements MoviesContract.View {
         super.onCreate(savedInstanceState);
 
         ((MoviesApplication) getContext().getApplicationContext())
-                .getMovieComponent(this)
+                .getMovieComponent()
                 .inject(this);
+
+        this.presenter = new MoviesPresenter(this, );
     }
 
     @Override
