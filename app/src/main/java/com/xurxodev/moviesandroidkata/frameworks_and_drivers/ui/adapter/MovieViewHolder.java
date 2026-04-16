@@ -1,0 +1,22 @@
+package com.xurxodev.moviesandroidkata.frameworks_and_drivers.ui.adapter;
+
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+import androidx.recyclerview.widget.RecyclerView;
+import com.xurxodev.moviesandroidkata.R;
+import com.xurxodev.moviesandroidkata.entities.Movie;
+
+public class MovieViewHolder extends RecyclerView.ViewHolder {
+    public final ImageView movieImageView;
+    public final TextView titleTextView;
+
+    public Movie movieItem;
+
+    public MovieViewHolder(View view) {
+        super(view);
+
+        movieImageView = view.findViewById(R.id.item_movie_poster);
+        titleTextView = view.findViewById(R.id.item_movie_title);
+    }
+}

@@ -1,0 +1,22 @@
+package com.xurxodev.moviesandroidkata.frameworks_and_drivers.di.module;
+
+import android.app.Application;
+
+import javax.inject.Singleton;
+import dagger.Module;
+import dagger.Provides;
+
+@Module
+public class AppModule {
+    Application application;
+
+    public AppModule(Application application) {
+        this.application = application;
+    }
+
+    @Provides
+    @Singleton
+    Application provideApplication() {
+        return application;
+    }
+}
