@@ -2,10 +2,12 @@
 
 buildscript {
     repositories {
+        google()
+        mavenCentral()
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.0'
+        classpath 'com.android.tools.build:gradle:8.4.0'
 
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
         // NOTE: Do not place your application dependencies here; they belong
@@ -15,6 +17,8 @@ buildscript {
 
 allprojects {
     repositories {
+        google()
+        mavenCentral()
         jcenter()
     }
 }
