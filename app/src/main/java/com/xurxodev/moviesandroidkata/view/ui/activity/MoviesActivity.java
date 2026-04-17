@@ -1,12 +1,10 @@
-package com.xurxodev.moviesandroidkata.view.activity;
+package com.xurxodev.moviesandroidkata.view.ui.activity;
 
 import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import com.xurxodev.moviesandroidkata.R;
-import com.xurxodev.moviesandroidkata.view.fragment.MoviesFragment;
+import com.xurxodev.moviesandroidkata.view.ui.fragment.MoviesFragment;
 
 public class MoviesActivity extends AppCompatActivity {
     @Override

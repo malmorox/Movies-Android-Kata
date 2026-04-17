@@ -1,12 +1,12 @@
-package com.xurxodev.moviesandroidkata.view.adapter;
+package com.xurxodev.moviesandroidkata.view.ui.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.xurxodev.moviesandroidkata.R;
+import com.xurxodev.moviesandroidkata.presenter.MoviesPresenter;
 import com.xurxodev.moviesandroidkata.view.loaders.ImageLoader;
 import com.xurxodev.moviesandroidkata.model.entity.Movie;
 import java.util.ArrayList;
@@ -16,13 +16,17 @@ import javax.inject.Inject;
 public class MoviesAdapter extends RecyclerView.Adapter<MovieViewHolder> {
     public List<Movie> movies = new ArrayList<>();
     private ImageLoader imageLoader;
-    private MoviesContract.Presenter presenter;
+    private MoviesPresenter presenter;
 
     @Inject
-    public MoviesAdapter(ImageLoader imageLoader, MoviesContract.Presenter presenter) {
-        this.imageLoader = imageLoader;
+    public MoviesAdapter(MoviesPresenter presenter, ImageLoader imageLoader) {
         this.presenter = presenter;
+        this.imageLoader = imageLoader;
     }
+
+    /*public void setPresenter(MoviesPresenter presenter) {
+        this.presenter = presenter;
+    }*/
 
     public void setMovies(List<Movie> movies) {
         this.movies = movies;

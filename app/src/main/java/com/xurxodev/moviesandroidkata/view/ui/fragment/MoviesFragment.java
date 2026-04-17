@@ -1,22 +1,23 @@
-package com.xurxodev.moviesandroidkata.view.fragment;
+package com.xurxodev.moviesandroidkata.view.ui.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
-
 import com.xurxodev.moviesandroidkata.R;
 import com.xurxodev.moviesandroidkata.databinding.FragmentMoviesBinding;
 import com.xurxodev.moviesandroidkata.presenter.MoviesPresenter;
+import com.xurxodev.moviesandroidkata.view.MoviesView;
 import com.xurxodev.moviesandroidkata.view.di.MoviesApplication;
 import com.xurxodev.moviesandroidkata.model.entity.Movie;
-import com.xurxodev.moviesandroidkata.view.adapter.MoviesAdapter;
+import com.xurxodev.moviesandroidkata.view.ui.adapter.MoviesAdapter;
 import java.util.List;
 import javax.inject.Inject;
 
-public class MoviesFragment extends Fragment {
-    private MoviesPresenter presenter;
+public class MoviesFragment extends Fragment implements MoviesView {
+    @Inject
+    MoviesPresenter presenter;
     @Inject
     MoviesAdapter adapter;
     private FragmentMoviesBinding binding;
@@ -29,7 +30,8 @@ public class MoviesFragment extends Fragment {
                 .getMovieComponent()
                 .inject(this);
 
-        this.presenter = new MoviesPresenter(this, );
+        this.presenter.setView(this);
+        //this.adapter.setPresenter(presenter);
     }
 
     @Override

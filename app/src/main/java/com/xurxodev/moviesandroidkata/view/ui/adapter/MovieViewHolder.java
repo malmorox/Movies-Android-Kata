@@ -1,4 +1,4 @@
-package com.xurxodev.moviesandroidkata.view.adapter;
+package com.xurxodev.moviesandroidkata.view.ui.adapter;
 
 import android.view.View;
 import android.widget.ImageView;

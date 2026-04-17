@@ -6,8 +6,7 @@ public class MoviesApplication extends Application {
     public MovieComponent getMovieComponent() {
         return DaggerMovieComponent.builder()
                 .appModule(new AppModule(this))
-                .repositoryModule(new RepositoryModule())
-                .imageModule(new ImageModule())
+                .networkModule(new NetworkModule())
                 .build();
     }
 }

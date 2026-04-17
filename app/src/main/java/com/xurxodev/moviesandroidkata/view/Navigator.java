@@ -1,27 +1,26 @@
 package com.xurxodev.moviesandroidkata.view;
 
+import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
-
 import com.xurxodev.moviesandroidkata.model.entity.Movie;
-import com.xurxodev.moviesandroidkata.view.activity.MovieDetailActivity;
+import com.xurxodev.moviesandroidkata.view.ui.activity.MovieDetailActivity;
+
+import javax.inject.Inject;
 
 public class Navigator {
-    private Context context;
+    private Context applicationContext;
 
-    public Navigator(Context context) {
-        this.context = context;
+    @Inject
+    public Navigator(Application context) {
+        this.applicationContext = context;
     }
 
     public void navigateToMovieDetail(Movie movie) {
-        Intent intent = new Intent(context, MovieDetailActivity.class);
+        Intent intent = new Intent(applicationContext, MovieDetailActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
         intent.putExtra("movie_title", movie.getTitle());
-        context.startActivity(intent);
-    }
-
-    public void navigateToMovies() {
-
+        applicationContext.startActivity(intent);
     }
 }

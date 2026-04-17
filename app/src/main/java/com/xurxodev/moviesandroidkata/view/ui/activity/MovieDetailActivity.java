@@ -1,11 +1,11 @@
-package com.xurxodev.moviesandroidkata.view.activity;
+package com.xurxodev.moviesandroidkata.view.ui.activity;
 
 import android.os.Bundle;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.xurxodev.moviesandroidkata.R;
 import com.xurxodev.moviesandroidkata.databinding.ActivityMovieDetailBinding;
+import com.xurxodev.moviesandroidkata.presenter.MovieDetailPresenter;
 import com.xurxodev.moviesandroidkata.view.MovieDetailView;
 import com.xurxodev.moviesandroidkata.view.di.MoviesApplication;
 import com.xurxodev.moviesandroidkata.view.loaders.ImageLoader;
@@ -14,7 +14,7 @@ import javax.inject.Inject;
 
 public class MovieDetailActivity extends AppCompatActivity implements MovieDetailView {
     @Inject
-    MovieDetailContract.Presenter presenter;
+    MovieDetailPresenter presenter;
     @Inject
     ImageLoader imageLoader;
     private ActivityMovieDetailBinding binding;
@@ -25,8 +25,10 @@ public class MovieDetailActivity extends AppCompatActivity implements MovieDetai
         setContentView(R.layout.activity_movie_detail);
 
         ((MoviesApplication) getApplication())
-                .getMovieComponent(this)
+                .getMovieComponent()
                 .inject(this);
+
+        this.presenter.setView(this);
 
         binding = ActivityMovieDetailBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
