@@ -1,7 +1,6 @@
 package com.xurxodev.moviesandroidkata.view.di;
 
 import android.app.Application;
-
 import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;

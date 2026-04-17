@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import com.xurxodev.moviesandroidkata.model.entity.Movie;
 import com.xurxodev.moviesandroidkata.view.ui.activity.MovieDetailActivity;
-
 import javax.inject.Inject;
 
 public class Navigator {
