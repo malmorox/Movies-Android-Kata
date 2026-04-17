@@ -12,7 +12,9 @@ import dagger.Component;
 @Singleton
 @Component(modules = {
         AppModule.class,
+        DataModule.class,
         NetworkModule.class,
+        ImageModule.class
 })
 public interface MovieComponent {
     void inject(MoviesFragment moviesFragment);

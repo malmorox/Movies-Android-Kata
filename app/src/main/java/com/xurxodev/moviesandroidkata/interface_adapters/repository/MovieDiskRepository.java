@@ -1,8 +1,8 @@
-package com.xurxodev.moviesandroidkata.interface_adapters.repositories;
+package com.xurxodev.moviesandroidkata.interface_adapters.repository;
 
-import com.xurxodev.moviesandroidkata.interface_adapters.repositories.boundary.MovieDataSource;
+import com.xurxodev.moviesandroidkata.interface_adapters.repository.boundary.MovieDataSource;
 import com.xurxodev.moviesandroidkata.usecases.boundary.MovieRepository;
-import com.xurxodev.moviesandroidkata.interface_adapters.repositories.boundary.MovieParser;
+import com.xurxodev.moviesandroidkata.interface_adapters.repository.boundary.MovieParser;
 import com.xurxodev.moviesandroidkata.entities.Movie;
 import java.util.List;
 import javax.inject.Inject;

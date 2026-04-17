@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.xurxodev.moviesandroidkata.R;
 import com.xurxodev.moviesandroidkata.frameworks_and_drivers.loaders.ImageLoader;
 import com.xurxodev.moviesandroidkata.entities.Movie;
+import com.xurxodev.moviesandroidkata.interface_adapters.presenters.MoviesPresenter;
+
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
@@ -16,10 +18,10 @@ import javax.inject.Inject;
 public class MoviesAdapter extends RecyclerView.Adapter<MovieViewHolder> {
     public List<Movie> movies = new ArrayList<>();
     private ImageLoader imageLoader;
-    private MoviesContract.Presenter presenter;
+    private MoviesPresenter presenter;
 
     @Inject
-    public MoviesAdapter(ImageLoader imageLoader, MoviesContract.Presenter presenter) {
+    public MoviesAdapter(ImageLoader imageLoader, MoviesPresenter presenter) {
         this.imageLoader = imageLoader;
         this.presenter = presenter;
     }

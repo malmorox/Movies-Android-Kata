@@ -3,7 +3,7 @@ package com.xurxodev.moviesandroidkata.frameworks_and_drivers.datasource;
 import android.app.Application;
 import android.content.Context;
 import com.xurxodev.moviesandroidkata.R;
-import com.xurxodev.moviesandroidkata.interface_adapters.repositories.boundary.MovieDataSource;
+import com.xurxodev.moviesandroidkata.interface_adapters.repository.boundary.MovieDataSource;
 
 import java.io.IOException;
 import java.io.InputStream;

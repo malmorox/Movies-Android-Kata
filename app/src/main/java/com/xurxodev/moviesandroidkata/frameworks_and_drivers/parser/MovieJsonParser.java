@@ -1,7 +1,7 @@
 package com.xurxodev.moviesandroidkata.frameworks_and_drivers.parser;
 
 import com.google.gson.Gson;
-import com.xurxodev.moviesandroidkata.interface_adapters.repositories.boundary.MovieParser;
+import com.xurxodev.moviesandroidkata.interface_adapters.repository.boundary.MovieParser;
 import com.xurxodev.moviesandroidkata.entities.Movie;
 import java.util.Arrays;
 import java.util.List;

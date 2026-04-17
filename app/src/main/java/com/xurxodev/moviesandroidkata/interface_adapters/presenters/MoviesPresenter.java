@@ -1,5 +1,6 @@
 package com.xurxodev.moviesandroidkata.interface_adapters.presenters;
 
+import com.xurxodev.moviesandroidkata.interface_adapters.presenters.boundary.MoviesView;
 import com.xurxodev.moviesandroidkata.usecases.GetMoviesUseCase;
 import com.xurxodev.moviesandroidkata.frameworks_and_drivers.ui.Navigator;
 import com.xurxodev.moviesandroidkata.entities.Movie;

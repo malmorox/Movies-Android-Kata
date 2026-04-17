@@ -1,7 +1,7 @@
 package com.xurxodev.moviesandroidkata.interface_adapters.presenters;
 
+import com.xurxodev.moviesandroidkata.interface_adapters.presenters.boundary.MovieDetailView;
 import com.xurxodev.moviesandroidkata.usecases.GetMovieDetailUseCase;
-
 import javax.inject.Inject;
 
 public class MovieDetailPresenter {

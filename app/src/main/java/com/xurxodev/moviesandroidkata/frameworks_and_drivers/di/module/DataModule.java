@@ -1,10 +1,10 @@
 package com.xurxodev.moviesandroidkata.frameworks_and_drivers.di.module;
 
-import com.xurxodev.moviesandroidkata.interface_adapters.repositories.boundary.MovieDataSource;
+import com.xurxodev.moviesandroidkata.interface_adapters.repository.boundary.MovieDataSource;
 import com.xurxodev.moviesandroidkata.frameworks_and_drivers.datasource.MovieDiskDataSource;
-import com.xurxodev.moviesandroidkata.interface_adapters.repositories.MovieDiskRepository;
+import com.xurxodev.moviesandroidkata.interface_adapters.repository.MovieDiskRepository;
 import com.xurxodev.moviesandroidkata.frameworks_and_drivers.parser.MovieJsonParser;
-import com.xurxodev.moviesandroidkata.interface_adapters.repositories.boundary.MovieParser;
+import com.xurxodev.moviesandroidkata.interface_adapters.repository.boundary.MovieParser;
 import com.xurxodev.moviesandroidkata.usecases.boundary.MovieRepository;
 import javax.inject.Singleton;
 import dagger.Binds;

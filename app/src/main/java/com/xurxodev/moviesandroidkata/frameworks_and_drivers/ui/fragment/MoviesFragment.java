@@ -5,18 +5,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
-
 import com.xurxodev.moviesandroidkata.R;
 import com.xurxodev.moviesandroidkata.databinding.FragmentMoviesBinding;
 import com.xurxodev.moviesandroidkata.frameworks_and_drivers.MoviesApplication;
 import com.xurxodev.moviesandroidkata.entities.Movie;
+import com.xurxodev.moviesandroidkata.interface_adapters.presenters.boundary.MoviesView;
 import com.xurxodev.moviesandroidkata.frameworks_and_drivers.ui.adapter.MoviesAdapter;
+import com.xurxodev.moviesandroidkata.interface_adapters.presenters.MoviesPresenter;
+
 import java.util.List;
 import javax.inject.Inject;
 
-public class MoviesFragment extends Fragment implements MoviesContract.View {
+public class MoviesFragment extends Fragment implements MoviesView {
     @Inject
-    MoviesContract.Presenter presenter;
+    MoviesPresenter presenter;
     @Inject
     MoviesAdapter adapter;
     private FragmentMoviesBinding binding;

@@ -9,11 +9,14 @@ import com.xurxodev.moviesandroidkata.databinding.ActivityMovieDetailBinding;
 import com.xurxodev.moviesandroidkata.frameworks_and_drivers.MoviesApplication;
 import com.xurxodev.moviesandroidkata.frameworks_and_drivers.loaders.ImageLoader;
 import com.xurxodev.moviesandroidkata.entities.Movie;
+import com.xurxodev.moviesandroidkata.interface_adapters.presenters.boundary.MovieDetailView;
+import com.xurxodev.moviesandroidkata.interface_adapters.presenters.MovieDetailPresenter;
+
 import javax.inject.Inject;
 
-public class MovieDetailActivity extends AppCompatActivity implements MovieDetailContract.View {
+public class MovieDetailActivity extends AppCompatActivity implements MovieDetailView {
     @Inject
-    MovieDetailContract.Presenter presenter;
+    MovieDetailPresenter presenter;
     @Inject
     ImageLoader imageLoader;
     private ActivityMovieDetailBinding binding;
