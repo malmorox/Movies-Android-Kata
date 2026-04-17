@@ -18,14 +18,8 @@ public class MovieDiskRepository implements MovieRepository {
 
     @Override
     public List<Movie> getMovies() {
-        // TODO: Simular delay sin un utils
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        String moviesData = dataSource.getRawMovies();
-        return parser.parse(moviesData);
+        simulateDelay();
+        return parser.parse(dataSource.getRawMovies());
     }
 
     @Override
@@ -37,5 +31,13 @@ public class MovieDiskRepository implements MovieRepository {
             }
         }
         return null;
+    }
+
+    private void simulateDelay() {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
